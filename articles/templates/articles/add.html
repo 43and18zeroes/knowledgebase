@@ -1,0 +1,20 @@
+<!-- templates/articles/add.html -->
+{% extends 'base.html' %}
+
+{% block title %}Artikel hinzufügen{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="title" class="form-label">Titel</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Inhalt</label>
+        <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Speichern</button>
+    <a href="/" class="btn btn-secondary">Zurück</a>
+</form>
+{% endblock %}
